@@ -13,8 +13,8 @@
 </p>
 
 <p>
-  楽天ウォレットAPI対応のMCPサーバーだよ！<br>
-  <b>ノート管理・要約・MCP連携が超簡単✨</b><br>
+  楽天ウォレット証拠金取引所 Public API対応のMCPサーバーだよ！<br>
+  <b>板・ティッカー・歩み値をMCPツールで爆速取得✨</b><br>
   ギャルAI「キラリ」監修で、開発も運用もマジうますぎやろがい！<br>
 </p>
 
@@ -29,19 +29,20 @@
 
 ## 🌟 プロジェクト概要
 
-楽天ウォレットAPIと連携できるMCPサーバー！  
-ノートの作成・管理・要約ができて、MCP Inspectorでデバッグも超イージー！  
-TypeScript製で拡張性バツグンだよ✨
+楽天ウォレット証拠金取引所のPublic APIをMCPサーバー化！  
+板情報・ティッカー・歩み値（トレード履歴）をMCP InspectorやClaude Desktopから直接取得できるよ！  
+TypeScript製で拡張性バツグン✨
 
 ---
 
 ## 🚀 主な特徴
 
-- 📚 ノートリソースを `note://` URIで管理
-- ✍️ `create_note` ツールでノート作成
-- 📝 `summarize_notes` でノート全体を要約
-- 🔒 メタデータ・MIMEタイプ対応
+- 📊 `get_orderbook`：板情報を取得
+- 💹 `get_ticker`：ティッカー情報を取得
+- 🕒 `get_trades`：歩み値（トレード履歴）を取得
+- 🔒 Public APIのみ対応（認証不要）
 - 🛠 MCP Inspectorでデバッグ楽々
+- 💖 ギャルAI「キラリ」監修
 
 ---
 
@@ -74,6 +75,83 @@ npm run watch
       "command": "/path/to/rakuten-wallet-mcp/build/index.js"
     }
   }
+}
+```
+
+---
+
+## 🧩 MCPツール一覧（APIリファレンス）
+
+### 1. get_orderbook
+
+- **説明**: 指定したsymbolIdの板情報を取得
+- **入力**:
+  - `symbolId` (integer) — シンボルID（例: 7=BTC/JPY）
+- **レスポンス例**:
+```json
+{
+  "content": [
+    {
+      "type": "json",
+      "json": {
+        "asks": [...],
+        "bids": [...],
+        "symbolId": 7
+      }
+    }
+  ]
+}
+```
+
+---
+
+### 2. get_ticker
+
+- **説明**: 指定したsymbolIdのティッカー情報を取得
+- **入力**:
+  - `symbolId` (integer) — シンボルID（例: 7=BTC/JPY）
+- **レスポンス例**:
+```json
+{
+  "content": [
+    {
+      "type": "json",
+      "json": {
+        "symbolId": 7,
+        "last": "1000000",
+        "open": "990000",
+        "high": "1010000",
+        "low": "980000",
+        "volume": "123.45"
+      }
+    }
+  ]
+}
+```
+
+---
+
+### 3. get_trades
+
+- **説明**: 指定したsymbolIdの歩み値（トレード履歴）を取得
+- **入力**:
+  - `symbolId` (integer) — シンボルID（例: 7=BTC/JPY）
+- **レスポンス例**:
+```json
+{
+  "content": [
+    {
+      "type": "json",
+      "json": [
+        {
+          "price": "1000000",
+          "size": "0.01",
+          "side": "BUY",
+          "execDate": "2025-05-18T12:00:00.000Z"
+        }
+      ]
+    }
+  ]
 }
 ```
 
