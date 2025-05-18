@@ -5,10 +5,10 @@
 <h1>💖 rakuten-wallet-mcp MCP Server</h1>
 
 <p>
-  <img alt="GitHub" src="https://img.shields.io/github/license/maki/rakuten-wallet-mcp">
-  <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/maki/rakuten-wallet-mcp">
-  <img alt="GitHub issues" src="https://img.shields.io/github/issues/maki/rakuten-wallet-mcp">
-  <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/maki/rakuten-wallet-mcp">
+  <img alt="GitHub" src="https://img.shields.io/github/license/Sunwood-ai-labs/rakuten-wallet-mcp">
+  <img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/Sunwood-ai-labs/rakuten-wallet-mcp">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues/Sunwood-ai-labs/rakuten-wallet-mcp">
+  <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Sunwood-ai-labs/rakuten-wallet-mcp">
   <img alt="TypeScript" src="https://img.shields.io/badge/language-TypeScript-blue">
 </p>
 
