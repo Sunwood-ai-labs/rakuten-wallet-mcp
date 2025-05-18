@@ -1,0 +1,13 @@
+node_modules/
+build/
+*.log
+.env*
+.DS_Store
+npm-debug.log
+coverage/
+# 画像キャッシュは除外、ただしdocs配下は公開
+*.png
+!docs/*.png
+
+.venv
+.SourceSageAssets/
